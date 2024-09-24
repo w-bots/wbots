@@ -150,8 +150,8 @@
                           class="bi bi-clock" style="margin-right: 10px"></i>09:00 - 10:30</td>
                       <td colspan="5"
                         style="text-align: center; vertical-align: middle; height: 100px; background-color: #d8dddf; cursor: pointer;"
-                        onclick="showMessage()">
-                        WBOTS - ST1
+                        onclick="showMessage(session1Details)">
+                        <span style="text-decoration: underline; color: blue;">WBOTS - ST1</span>
                       </td>
                     </tr>
                     <tr style="background-color: #f2f2f2;"> <!-- Linha zebra -->
@@ -162,10 +162,10 @@
                       <td style="margin-right: 10px; background-color: #d8dddf;vertical-align: middle;"><i
                           class="bi bi-clock" style="margin-right: 10px"></i>11:00 - 12:30</td>
                       <td colspan="5"
-                        style="text-align: center; vertical-align: middle; height: 100px;background-color: #d8dddf;">
-                        WBOTS - ST2
+                        style="text-align: center; vertical-align: middle; height: 100px; background-color: #d8dddf; cursor: pointer;"
+                        onclick="showMessage(session2Details)">
+                        <span style="text-decoration: underline; color: blue;">WBOTS - ST2</span>
                       </td>
-
                     </tr>
                     <tr style="background-color: #f2f2f2;"> <!-- Linha zebra -->
                       <td><i class="bi bi-clock" style="margin-right: 10px"></i>12:30 - 14:00</td>
@@ -187,9 +187,9 @@
                       <td style="margin-right: 10px; background-color: #d8dddf;vertical-align: middle;"><i
                           class="bi bi-clock" style="margin-right: 10px"></i>16:00 - 17:00</td>
                       <td colspan="5"
-                        style="text-align: center; vertical-align: middle; height: 100px;background-color: #d8dddf;">
-                        Reunião Comitê
-                        Diretivo WBOTS</td>
+                        style="text-align: center; vertical-align: middle; height: 100px; background-color: #d8dddf;">
+                        Reunião Comitê Diretivo WBOTS
+                      </td>
                     </tr>
 
 
@@ -197,6 +197,9 @@
                   </tbody>
                 </table>
               </div>
+
+
+              <div id="message"></div>
 
             </div>
 
@@ -266,9 +269,7 @@
       </div>
     </div>
 
-    <div id="message">
-      Este é o texto que aparece ao clicar!
-    </div>
+    <div id="message" style="display: none;"></div>
 
   </footer><!-- End Footer -->
 
@@ -278,10 +279,90 @@
   <div id="preloader"></div>
 
   <script>
-    function showMessage() {
-      const messageDiv = document.getElementById('message');
-      messageDiv.style.display = 'block';
+    function showMessage(session) {
+      const message = document.getElementById('message');
+      if (message.style.display === 'none' || message.style.display === '') {
+        message.style.display = 'block';
+        message.innerHTML = `
+                <table class="table table-bordered">
+                    <thead style="background-color: #4CAF50; height: 50px;">
+                        <tr>
+                            <th scope="col" colspan="5" style="text-align: center; background-color: #5ea6b8; vertical-align: middle;">
+                                Detalhes da sessão - ${session.title}
+                                <br/>
+                                Sala: ${session.room}
+                                <br/>
+                                Horário: ${session.time}
+                                <br/>
+                                Chair: ${session.chair}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${session.sessions.map(s => `
+                            <tr style="background-color: #f2f2f2;">
+                                <td colspan="5">${s.title}<br/>
+                                Autores: ${s.authors.join(', ')}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+
+        message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        message.style.display = 'none';
+      }
     }
+
+    const session1Details = {
+      title: 'ST1',
+      room: 'Auditório Maria Montessouri',
+      time: '09:00 - 10:30',
+      chair: 'Jacson Rodrigues Barbosa (UFG)',
+      sessions: [
+        {
+          title: 'Heurísticas para a Avaliação de Acessibilidade em Chatbots',
+          authors: ['Augusto Castilho de Medeiros (UNIVERSIDADE FEDERAL DE JUIZ DE FORA)', 'Pedro Henrique Dias Valle (UNIVERSIDADE DE SÃO PAULO)', 'André Luiz de Oliveira (UNIVERSIDADE FEDERAL DE JUIZ DE FORA']
+        },
+        {
+          title: 'Evidências preliminares sobre como um chatbot é desenvolvido em uma organização de software',
+          authors: ['John Silva Fonseca (UNIVERSIDADE DE SÃO PAULO)', 'Silvana Morita Melo (Universidade Federal de Grandes Dourados)', 'Pedro Henrique Dias Valle (UNIVERSIDADE DE SÃO PAULO)', 'Leo Natan Paschoal (UNIVERSIDADE DE SÃO PAULO)']
+        },
+        {
+          title: 'Uma técnica para apoiar profissionais de testes na condução de testes metamórficos em chatbots',
+          authors: ['GABRIEL SANTOS (UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ)', 'Williamson Silva (UNIVERSIDADE FEDERAL DO PAMPA)', 'Pedro Henrique Dias Valle (UNIVERSIDADE DE SÃO PAULO)']
+        },
+        {
+          title: 'Bart: Uma Técnica de Elicitação de Requisitos para Sistemas Multiagentes',
+          authors: ['Willian Gerstberger (UNIVERSIDADE FEDERAL DO PAMPA)', 'Williamson Silva (UNIVERSIDADE FEDERAL DO PAMPA)', 'Gilleanes Thorwald Araujo Guedes (UNIVERSIDADE FEDERAL DO PAMPA)']
+        }
+      ]
+    };
+    const session2Details = {
+      title: 'ST2',
+      room: 'Auditório Maria Montessouri',
+      time: '11:00 - 12:30',
+      chair: 'Chair: Leo Paschoal (USP)',
+      sessions: [
+        {
+          title: 'The Importance of Attributes in Predicting the Lifetime of Human and Automated Pull Requests',
+          authors: ['Leandro Ferrarezi Valiante (UNIVERSIDADE FEDERAL DO ACRE), Mairieli Wessel (Radboud University), Manoel Limeira de Lima Júnior (UNIVERSIDADE FEDERAL DO ACRE)']
+        },
+        {
+          title: 'Uma Revisão Sistemática da Literatura sobre Chatbots na Educação: Desenvolvimento e Aplicações',
+          authors: ['Judson Henrique Alvarenga (UNIVERSIDADE FEDERAL DO PAMPA), Igor Dalepiane (UNIVERSIDADE FEDERAL DO PAMPA), Lucas Fell (UNIVERSIDADE DO PAMPA), Maicon Bernadino (UNIVERSIDADE FEDERAL DO PAMPA)']
+        },
+        {
+          title: 'Avaliação de Usabilidade do CoderBot como Recurso Pedagógico no Ensino de Programação',
+          authors: ['Andre Luiz Mendes (UNIVERSIDADE FEDERAL DO PAMPA), Renato Garcia, Ana Carolina Oran (UNIVERSIDADE FEDERAL DO AMAZONAS), Gilleanes Thorwald Araujo Guedes (Federal University of Pampa), Pedro Henrique Dias Valle (UNIVERSIDADE DE SÃO PAULO),  Williamson Silva (UNIVERSIDADE FEDERAL DO PAMPA)']
+        },
+        {
+          title: 'Inovação através do Uso de Bots no Tribunal de Justiça do Amazonas: Um Relato de Experiência (Relatos de Experiência)',
+          authors: ['Amadeu Anderlin Neto (Instituto Federal do Amazonas)']
+        }
+      ]
+    };
   </script>
 
   <!-- Vendor JS Files -->
