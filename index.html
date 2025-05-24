@@ -26,12 +26,16 @@
     }
 
     ul {
-      list-style: none;
-      padding: 0;
-    }
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* espaçamento entre botões */
+}
 
     li {
-      margin: 12px 0;
+      margin:  0;
     }
 
     a {
@@ -70,7 +74,7 @@
           if (response.ok) {
             const li = document.createElement('li');
             const link = document.createElement('a');
-            link.href = `.${basePath}/${ano}/`;
+            link.href = `.${ano}/`;
             link.innerHTML = `<i class="fas fa-calendar-alt icon"></i> Edição ${ano}`;
             li.appendChild(link);
             lista.appendChild(li);
