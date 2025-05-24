@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>WBots 2025</title>
+  <title>WBots 2024</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -42,7 +42,7 @@
   <!-- =======================================================
   * Template Name: HeroBiz
   * Template URL: https://bootstrapmade.com/herobiz-bootstrap-business-template/
-  * Updated: Mar 17 2025 with Bootstrap v5.3.3
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
@@ -58,7 +58,7 @@
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <img src="assets/img/logo2.png" width="200" height="80">
-        <!--<h1>WBots2025<span>.</span></h1>-->
+        <!--<h1>WBots2024<span>.</span></h1>-->
       </a>
 
       <nav id="navbar" class="navbar">
@@ -90,75 +90,91 @@
 
 
 
-    <section id="about" class="about">
+
+    <section id="team" class="team">
       <div class="container" data-aos="fade-up">
 
-        <i class="fas fa-robot"></i>
-        
-  <br/>
-  <br/>
-  <br/>
-  <h1>Em breve</h1>
-  <p>Estamos preparando algo incrível para você.</p>
-  <br/>
-  <br/>
-  <br/>
-  
-
-        <!-- <div class="section-header">
-          <h2>Igor F Steinmacher</h2>
+        <div class="section-header">
+          <h2>Artigos aceitos</h2>
 
         </div>
 
-        <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-5">
-            <div class="about-img">
-              <img src="assets/img/keynotes/igor.jpeg" class="img-fluid" alt="">
-            </div>
-          </div>
-
-          <div class="col-lg-7">
-            <h3 class="pt-0 pt-lg-5">Northern Arizona University
-            </h3>
+        <section id="services" class="services section">
+          <div class="container" data-aos="fade-up">
 
 
-            <div class="tab-content">
+            <div class="row" style="justify-content: center;">
+              <div class="container_center">
+                <div class="box_center" style="margin-left: 8%; margin-right: 8%;">
+                  <div class="">
+                    <p style="text-align: justify;">
+                      <b>Título: Heurísticas para a Avaliação de Acessibilidade em Chatbots</b>
+                      </br>
+                      Autores: Augusto Castilho de Medeiros (UNIVERSIDADE FEDERAL DE JUIZ DE FORA), Pedro Henrique
+                      Dias
+                      Valle (UNIVERSIDADE DE SÃO PAULO), André Luiz de Oliveira (UNIVERSIDADE FEDERAL DE JUIZ DE
+                      FORA)
+                      </br>
+                      </br>
+                      <b>Título: Evidências preliminares sobre como um chatbot é desenvolvido em uma organização de
+                        software</b>
+                      </br>Autores: John Silva Fonseca (UNIVERSIDADE DE SÃO PAULO), Silvana Morita Melo (Universidade
+                      Federal
+                      de Grandes Dourados), Pedro Henrique Dias Valle (UNIVERSIDADE DE SÃO PAULO), Leo Natan
+                      Paschoal
+                      (UNIVERSIDADE DE SÃO PAULO)"
+                      </br>
+                      </br>
+                      <b>Título: Uma técnica para apoiar profissionais de testes na condução de testes metamórficos
+                        em
+                        chatbots</b>
+                      </br>Autores: GABRIEL SANTOS (UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ), Williamson Silva
+                      (UNIVERSIDADE FEDERAL DO PAMPA), Pedro Henrique Dias Valle (UNIVERSIDADE DE SÃO PAULO)"</br></br>
+                      <b>Título: Bart: Uma Técnica de Elicitação de Requisitos para Sistemas Multiagentes</b>
+                      </br>Autores: Willian Gerstberger (UNIVERSIDADE FEDERAL DO PAMPA), Williamson Silva (UNIVERSIDADE
+                      FEDERAL DO PAMPA), Gilleanes Thorwald Araujo Guedes (UNIVERSIDADE FEDERAL DO PAMPA)"</br></br>
 
-              <div class="tab-pane fade show active" id="tab1">
+                      <b>Título: The Importance of Attributes in Predicting the Lifetime of Human and Automated Pull
+                        Requests</b>
+                      </br>
+                      Autores: Leandro Ferrarezi Valiante (UNIVERSIDADE FEDERAL DO ACRE), Mairieli Wessel (Radboud
+                      University), Manoel Limeira de Lima Júnior (UNIVERSIDADE FEDERAL DO ACRE)
+                      </br>
+                      </br>
+                      <b>Título: Uma Revisão Sistemática da Literatura sobre Chatbots na Educação: Desenvolvimento e
+                        Aplicações
+                      </b>
+                      </br>Autores: Judson Henrique Alvarenga (UNIVERSIDADE FEDERAL DO PAMPA), Igor Dalepiane
+                      (UNIVERSIDADE
+                      FEDERAL DO PAMPA), Lucas Fell (UNIVERSIDADE DO PAMPA), Maicon Bernadino (UNIVERSIDADE FEDERAL DO
+                      PAMPA)"
+                      </br>
+                      </br>
+                      <b> Título: Avaliação de Usabilidade do CoderBot como Recurso Pedagógico no Ensino de Programação
+                      </b>
+                      </br>Autores: Andre Luiz Mendes (UNIVERSIDADE FEDERAL DO PAMPA), Renato Garcia, Ana Carolina Oran
+                      (UNIVERSIDADE FEDERAL DO AMAZONAS), Gilleanes Thorwald Araujo Guedes (Federal University of
+                      Pampa), Pedro Henrique Dias Valle (UNIVERSIDADE DE SÃO PAULO), Williamson Silva (UNIVERSIDADE
+                      FEDERAL DO PAMPA)
+                      </br>
+                      </br>
+                      <b> Título: Inovação através do Uso de Bots no Tribunal de Justiça do Amazonas: Um Relato de
+                        Experiência (Relatos de Experiência)</b></br>
+                      Autor: Amadeu Anderlin Neto (Instituto Federal do Amazonas)
 
-                <p class="fst-italic">Doutor em Ciência da Computação pelo IME-USP, Graduado em Ciência da Computação
-                  pela UEM (2003) e Mestre em Ciências da Computação pela UFRGS (2005). Faz parte do quadro efetivo da
-                  Northern Arizona Universitiy, como Professor Assistente. Foi organizador das edições de 2014 e 2015 do
-                  Workshop de Software Livre (WSL) e do Simpósio Brasileiro de Sistemas Colaborativos (SBSC) 2012, e do
-                  CBSoft 2016. Foi membro do comitê de programa de diversos eventos nacionais e internacionais nas áreas
-                  de Engenharia de Software e Sistemas Colaborativos (ICSE, ICGSE, ACM CSCW, ACM GROUP, OSS, FSE, ICSME,
-                  SANER, etc.), é membro do corpo editorial do Journal of Software: Evolution and Practice, e é revisor
-                  frequente de outros periódicos importantes (EMSE, TSE, JSS, JISA, JSERD, CSCW). Também atuou como
-                  Program Chair de eventos, incluindo AICCSA 2019 - Software Engineering Track, ICGSE 2020, CHASE 2019,
-                  SBES 2020-Education Track. Tem mais de 100 artigos publicados em veículos com revisão por pares, e
-                  recebeu alguns prêmios, destacando-se: ICSE 2021 and 2023 ACM SIGSOFT Distinguished Paper Award, ICSME
-                  2020 TCSE Distinguised Paper Award; OpenSym 2020 Best Paper Award; ACM CSCW 2020 Honorable Mention
-                  Award; ICSE SEET 2019 Distinguished Paper Award; SBES 2018 Best Paper Award. Tem como principais
-                  linhas de pesquisa e interesse: Mineração de Repositórios de Software, Processo de Desenvolvimento de
-                  Software Livre, Entrada de novatos em projetos de software, pesquisa qualitativa, engenharia de
-                  software experimental.</p>
+                    </p>
 
-
-
+                  </div>
+                </div>
               </div>
-
-
-
             </div>
-
           </div>
+        </section>
 
-        </div> -->
+
 
       </div>
-    </section>
-
+    </section> -->
 
   </main><!-- End #main -->
 
@@ -171,7 +187,7 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
-              <h3>WBots 2025</h3>
+              <h3>WBots 2024</h3>
 
             </div>
           </div>
@@ -179,8 +195,8 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Links Úteis</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="https://cbsoft.sbc.org.br/2025/cbsoft/"
-                  target="_blank">CBSOFT 2025</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="https://cbsoft.sbc.org.br/2024/cbsoft/"
+                  target="_blank">CBSOFT 2024</a></li>
             </ul>
           </div>
 
@@ -196,7 +212,7 @@
 
         <div class="d-flex flex-column align-items-center align-items-lg-start">
           <div class="copyright">
-            &copy; <strong><span>WBOTS 2025</span></strong>. Todos os direitos reservados
+            &copy; <strong><span>WBOTS 2024</span></strong>. Todos os direitos reservados
           </div>
           <div class="credits">
             <!-- All the links in the footer should remain intact. -->
