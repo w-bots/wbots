@@ -59,35 +59,36 @@
   <ul id="lista-edicoes"></ul>
 
   <script>
-    const anosPossiveis = Array.from({ length: 10 }, (_, i) => 2018 + i); // ajustável
+    const anosPossiveis = Array.from({ length: 10 }, (_, i) => 2018 + i);
     const lista = document.getElementById('lista-edicoes');
-    const host = location.origin;
-
+    const basePath = location.pathname.replace(/\/$/, '');
+  
     async function verificarPastas() {
       for (const ano of anosPossiveis.reverse()) {
         try {
-          const response = await fetch(`${host}/${ano}/index.html`, { method: 'HEAD' });
+          const response = await fetch(`${basePath}/${ano}/index.html`, { method: 'HEAD' });
           if (response.ok) {
             const li = document.createElement('li');
             const link = document.createElement('a');
-            link.href = `./${ano}/`;
+            link.href = `.${basePath}/${ano}/`;
             link.innerHTML = `<i class="fas fa-calendar-alt icon"></i> Edição ${ano}`;
             li.appendChild(link);
             lista.appendChild(li);
           }
         } catch (err) {
-          // silenciosamente ignora pastas que não existem
+          // Ignora anos não existentes
         }
       }
-
+  
       if (!lista.children.length) {
         document.querySelector('p').innerText = 'Nenhuma edição encontrada.';
       } else {
-        document.querySelector('p').remove(); // remove "Carregando..." se encontrou algo
+        document.querySelector('p').remove();
       }
     }
-
+  
     verificarPastas();
   </script>
+  
 </body>
 </html>
