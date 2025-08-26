@@ -1,55 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>WBots 2025</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>WBots 2024</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
 
   <!-- Favicons -->
-  <link href="assets/img/icon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/icon.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
-    rel="stylesheet">
+    rel="stylesheet"
+  />
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- Variables CSS Files. Uncomment your preferred color scheme -->
-  <link href="assets/css/variables.css" rel="stylesheet">
-  <!-- <link href="assets/css/variables-blue.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-green.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-orange.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-purple.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-red.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-pink.css" rel="stylesheet"> -->
+  <!-- Variables CSS Files -->
+  <link href="assets/css/variables.css" rel="stylesheet" />
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet" />
 
   <!-- =======================================================
   * Template Name: HeroBiz
   * Template URL: https://bootstrapmade.com/herobiz-bootstrap-business-template/
-  * Updated: Mar 17 2025 with Bootstrap v5.3.3
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <style>
+    .paper-card .badge {
+      font-weight: 600;
+      letter-spacing: .2px;
+    }
+    .paper-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: .35rem;
+    }
+    .paper-authors {
+      color: #555;
+      margin-bottom: 0;
+    }
+  </style>
 </head>
 
 <body>
-
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top" data-scrollto-offset="0">
     <div class="container-fluid d-flex align-items-center justify-content-between">
@@ -82,102 +91,81 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
-    <br />
-    <br />
-    <br />
-    <br />
-
-
-
+  <main id="main" class="pt-5">
+    <div class="mt-5"></div>
 
     <section id="team" class="team">
       <div class="container" data-aos="fade-up">
 
-        
+        <div class="section-header">
+          <h2>Artigos aceitos</h2>
+        </div>
 
         <section id="services" class="services section">
           <div class="container" data-aos="fade-up">
 
+            <!-- Lista dinâmica -->
+            <div id="accepted-list" class="row g-3"></div>
 
-            <i class="fas fa-robot"></i>
-        
-         
-           
-            <h1>Em breve</h1>
-            <p>Estamos preparando algo incrível para você.</p>
-            
-           
+            <!-- Fallback -->
+            <div id="accepted-fallback" class="text-center text-muted" style="display:none;">
+              <i class="bi bi-hourglass-split"></i> Em breve.
+            </div>
+
           </div>
         </section>
-
-
-
       </div>
-    </section> -->
-
+    </section>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
-
     <div class="footer-content">
       <div class="container">
         <div class="row">
 
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
-              <h3>WBots 2025</h3>
-
+              <h3>WBots 2024</h3>
             </div>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Links Úteis</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="https://cbsoft.sbc.org.br/2025/cbsoft/"
-                  target="_blank">CBSOFT 2025</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="https://cbsoft.sbc.org.br/2024/cbsoft/" target="_blank" rel="noopener">CBSOFT 2024</a></li>
             </ul>
           </div>
-
-
 
         </div>
       </div>
     </div>
 
     <div class="footer-legal text-center">
-      <div
-        class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
-
+      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
         <div class="d-flex flex-column align-items-center align-items-lg-start">
           <div class="copyright">
-            &copy; <strong><span>WBOTS 2025</span></strong>. Todos os direitos reservados
+            &copy; <strong><span>WBOTS 2024</span></strong>. Todos os direitos reservados
           </div>
           <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Designed by <a href="https://bootstrapmade.com/" rel="noopener">BootstrapMade</a>
           </div>
         </div>
 
         <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="twitter" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="google-plus" aria-label="Skype"><i class="bi bi-skype"></i></a>
+          <a href="#" class="linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
         </div>
-
       </div>
     </div>
-
   </footer><!-- End Footer -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <div id="preloader"></div>
 
@@ -189,9 +177,158 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
+  <!-- Accepted Papers (direto aqui, com os artigos citados) -->
+  <script>
+    const acceptedPapers = [
+      {
+        title: "Template-Driven Specification of Requirements for LLM-Based Chatbots",
+        type: "Artigo",
+        authors: [
+          `Caio Vinícius Melo da Silva (USP Leste, Brasil)`,
+          `Ana Rocio Cardenas Maita (USP, Brasil)`,
+          `Gregorio Assagra de Almeida Filho`,
+          `Carlos Henrique Camillo da Silva (EACH, University of São Paulo, Brasil)`,
+          `Gabriel Dimant (USP, Brasil)`,
+          `Renato Augusto Almeida (Itaú Unibanco S.A., Brasil)`,
+          `Guilherme Costa (Itaú Unibanco S.A., Brasil)`,
+          `Anna Martha Cintra Araujo (Itaú Unibanco S.A., Brasil)`,
+          `Barbara Correia Dos Santos Santana`,
+          `Enio Alterman Blay`,
+          `Sarajane Marques Peres (USP, Brasil)`
+        ]
+      },
+      {
+        title: "Do LLMs support generating code that is compliant with creational design patterns?",
+        type: "Artigo",
+        authors: [
+          `Caio Machado (USP, Brasil)`,
+          `Eduardo Kugler Viegas (Pontifícia Universidade Católica do Paraná, PUC-PR, Brasil)`,
+          `Silvana Morita Melo (UFGD, Brasil)`,
+          `Leo Natan Paschoal (PUCPR, Brasil)`
+        ]
+      },
+      {
+        title: "Tecnologias para Avaliação da Experiência do Usuário em Chatbots: Um Mapeamento Sistemático da Literatura",
+        type: "Artigo",
+        authors: [
+          `Maria Luiza Rocha (UNIPAMPA, Brasil)`,
+          `Pietra Soares`,
+          `Luiz Rafael Jacques Caldeira`,
+          `Paulo Souza (Federal University of Pampa, Brasil)`,
+          `Ricardo Vilela (UNICAMP, Brasil)`,
+          `Pedro Henrique Dias Valle (USP, Brasil)`,
+          `Williamson Silva (UFCA, Brasil)`
+        ]
+      },
+      {
+        title: "Evaluating LLM-Based Chatbots through Touchpoint-Driven Process Models",
+        type: "Artigo",
+        authors: [
+          `Carlos Henrique Camillo da Silva (EACH, University of São Paulo, Brasil)`,
+          `Ana Rocio Cardenas Maita (USP, Brasil)`,
+          `Gregorio Assagra de Almeida Filho`,
+          `Caio Vinícius Melo da Silva (USP Leste, Brasil)`,
+          `Gabriel Dimant (USP, Brasil)`,
+          `Renato Augusto Almeida (Itaú Unibanco S.A., Brasil)`,
+          `Guilherme Costa (Itaú Unibanco S.A., Brasil)`,
+          `Anna Martha Cintra Araujo (Itaú-Unibanco S.A., Brasil)`,
+          `Barbara Correia Dos Santos Santana`,
+          `Enio Alterman Blay`,
+          `Sarajane Marques Peres (USP, Brasil)`
+        ]
+      },
+      {
+        title: "OrchestraAI: A Multi-Agent Generative AI for Software Development",
+        type: "Artigo",
+        authors: [
+          `João Luiz Bione da Silva Holanda (UNILASALLE RJ - Instituto Superior de Educação La Salle, Brasil)`,
+          `Thiago Silva de Souza (IBMEC-RJ, Brasil)`
+        ]
+      },
+      {
+        title: "An Experience Report on User-Centered Chatbot Design through Design Thinking",
+        type: "Artigo",
+        authors: [
+          `Bianca Maia Ribeiro (UNIPAMPA, Brasil)`,
+          `Kauã Henrico da Silva Souza (UNIPAMPA, Brasil)`,
+          `Leonardo Goncalves da Silva (UNIPAMPA)`,
+          `João Villa (UNIPAMPA, Brasil)`,
+          `Ricardo Vilela (UNICAMP, Brasil)`,
+          `Pedro Henrique Dias Valle (USP, Brasil)`,
+          `Williamson Silva (UFCA, Brasil)`
+        ]
+      },
+      {
+        title: "Uma Técnica para Alerta Preventivo de Dados Sensíveis em Chatbots com Modelos de Linguagem de Grande Porte (LLMs)",
+        type: "Artigo",
+        authors: [
+          `Felipe Diego Lobato da Silva (USP, Brasil)`,
+          `Thiago Adriano Coleti (UENP, Brasil)`
+        ]
+      },
+      {
+        title: "Explorando o Uso de Agentes Inteligentes na Geração Automatizada de Testes para APIs RESTful",
+        type: "Artigo",
+        authors: [
+          `Ricardo Vilela (UNICAMP, Brasil)`,
+          `Stevão Alves de Andrade (Universidade de São Paulo/ICMC, Brasil)`,
+          `Eduardo Farias (NEES-UFAL)`,
+          `Williamson Silva (UFCA, Brasil)`,
+          `Pedro Henrique Dias Valle (USP, Brasil)`
+        ]
+      },
+      
+    ];
+
+    function renderAccepted(list) {
+      const wrap = document.getElementById("accepted-list");
+      const fallback = document.getElementById("accepted-fallback");
+      wrap.innerHTML = "";
+
+      if (!Array.isArray(list) || list.length === 0) {
+        fallback.style.display = "block";
+        return;
+      }
+      fallback.style.display = "none";
+
+      list.forEach((p, idx) => {
+        const col = document.createElement("div");
+        col.className = "col-12";
+
+        const card = document.createElement("div");
+        card.className = "card shadow-sm paper-card";
+        card.setAttribute("data-aos", "fade-up");
+        card.setAttribute("data-aos-delay", String(50 * (idx % 8)));
+
+        const body = document.createElement("div");
+        body.className = "card-body";
+
+        const badge = document.createElement("span");
+        badge.className = "badge rounded-pill bg-info text-dark mb-2";
+        badge.textContent = p.type || "Artigo";
+
+        const title = document.createElement("div");
+        title.className = "paper-title";
+        title.textContent = p.title;
+
+        const authors = document.createElement("p");
+        authors.className = "paper-authors";
+        authors.innerHTML = `<strong>Autores:</strong> ${Array.isArray(p.authors) ? p.authors.join(", ") : ""}`;
+
+        body.appendChild(badge);
+        body.appendChild(title);
+        body.appendChild(authors);
+
+        card.appendChild(body);
+        col.appendChild(card);
+        wrap.appendChild(col);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => renderAccepted(acceptedPapers));
+  </script>
+
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
-
 </html>
