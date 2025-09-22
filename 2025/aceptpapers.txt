@@ -248,7 +248,7 @@
         ]
       },
       {
-        title: "Uma Técnica para Alerta Preventivo de Dados Sensíveis em Chatbots com Modelos de Linguagem de Grande Porte (LLMs)",
+        title: "Middleware para Interceptação de Dados Sensíveis em Chatbots com Modelos de Linguagem de Grande Porte (LLMs)",
         type: "Artigo",
         authors: [
           `Felipe Diego Lobato da Silva (USP, Brasil)`,
