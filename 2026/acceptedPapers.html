@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Artigos Aceitos — WBots 2026</title>
+  <meta content="Artigos aceitos no WBots 2026" name="description">
+
+  <link href="assets/img/icon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/variables.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/wbots-2026.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <script>
+    (function() {
+      if (location.protocol === 'file:') return;
+      var x = new XMLHttpRequest();
+      x.open('GET', 'partials/header.html', false);
+      x.send(null);
+      if (x.status === 200) document.write(x.responseText);
+    })();
+  </script>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-tag" data-aos="fade-up">Resultados</div>
+      <h1 data-aos="fade-up" data-aos-delay="50">Artigos Aceitos</h1>
+      <p data-aos="fade-up" data-aos-delay="100">Trabalhos selecionados para apresentação no WBots 2026.</p>
+    </div>
+  </section>
+
+  <main id="main">
+    <section class="papers-section" style="padding:80px 0;">
+      <div class="container">
+
+        <div id="accepted-list" class="row g-3" data-aos="fade-up"></div>
+
+        <div id="accepted-fallback" class="coming-soon" style="display:none;">
+          <div class="cs-icon"><i class="bi bi-journal-bookmark"></i></div>
+          <h2>Em breve</h2>
+          <p>Os artigos aceitos serão divulgados após o processo de revisão.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function() {
+      if (location.protocol === 'file:') return;
+      var x = new XMLHttpRequest();
+      x.open('GET', 'partials/footer.html', false);
+      x.send(null);
+      if (x.status === 200) document.write(x.responseText);
+    })();
+  </script>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script>
+    const acceptedPapers = [];
+
+    function renderAccepted(list) {
+      const wrap = document.getElementById("accepted-list");
+      const fallback = document.getElementById("accepted-fallback");
+      wrap.innerHTML = "";
+
+      if (!Array.isArray(list) || list.length === 0) {
+        fallback.style.display = "flex";
+        return;
+      }
+      fallback.style.display = "none";
+
+      list.forEach((p, idx) => {
+        const col = document.createElement("div");
+        col.className = "col-12";
+        col.setAttribute("data-aos", "fade-up");
+        col.setAttribute("data-aos-delay", String(40 * (idx % 6)));
+
+        col.innerHTML = `
+          <div class="paper-card">
+            <span class="badge">${p.type || "Artigo"}</span>
+            <div class="paper-title">${p.title}</div>
+            <p class="paper-authors"><strong>Autores:</strong> ${Array.isArray(p.authors) ? p.authors.join(", ") : ""}</p>
+          </div>`;
+
+        wrap.appendChild(col);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => renderAccepted(acceptedPapers));
+  </script>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
