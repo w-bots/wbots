@@ -80,7 +80,47 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <script>
-    const acceptedPapers = [];
+    const acceptedPapers = [
+      {
+        type: "Artigo",
+        title: "Pre-Deployment Evaluation of LLM-based Conversational Agents through a Digital Twin-Inspired Approach",
+        authors: [
+          "Caio Vinicius Bernardo (USP, Brasil)",
+          "Thais Rodrigues Neubauer (USP, Brasil)",
+          "Gregorio Assagra de Almeida Filho",
+          "Enio Alterman Blay",
+          "Sarajane Marques Peres (USP, Brasil)"
+        ]
+      },
+      {
+        type: "Artigo",
+        title: "Uma Proposta de Arquitetura de Software para uma Plataforma Conversacional de Suporte à BNCC",
+        authors: [
+          "Emanuel Coutinho (UFC, Brasil)",
+          "Francisco Gilvan de Oliveira (UFC, Brasil)"
+        ]
+      },
+      {
+        type: "Artigo",
+        title: "ArcAssist-Web Bot: A Prototype Instantiation for Evidence-Grounded Architectural Decision Support",
+        authors: [
+          "Vanusa Rodrigues de Oliveira (UFLA, Brasil)",
+          "Bento Rafael Siqueira (UFLA, Brasil)",
+          "Samira Santos da Silva (UFLA, Brasil)"
+        ]
+      },
+      {
+        type: "Artigo",
+        title: "Uma Ferramenta para Apoiar a Seleção de Instrumentos de Avaliação de Chatbots Educacionais",
+        authors: [
+          "Mariana Almeida (UTFPR, Brasil)",
+          "Gabriel Felipe Jess Meira (PUCPR, Brasil)",
+          "Silvana Morita Melo (UFGD, Brasil)",
+          "Leo Natan Paschoal (PUCPR, Brasil)",
+          "Pedro Henrique Dias Valle (USP, Brasil)"
+        ]
+      }
+    ];
 
     function renderAccepted(list) {
       const wrap = document.getElementById("accepted-list");
