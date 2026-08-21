@@ -864,6 +864,35 @@ hr.w-hr { border:none; border-top:1px solid var(--w-border); margin:32px 0; }
 .prog-title { color:#fff; font-weight:700; font-size:.95rem; line-height:1.45; }
 .prog-speaker { color:var(--w-light); font-size:.88rem; font-weight:600; margin-top:6px; }
 .prog-speaker span { color:var(--w-muted); font-weight:400; }
+
+/* Chip do currículo Lattes do palestrante */
+.prog-lattes {
+  display:inline-flex; align-items:center; gap:6px;
+  margin-left:9px; padding:3px 11px;
+  vertical-align:middle;
+  background: rgba(14,162,189,.08);
+  border:1px solid rgba(14,162,189,.28);
+  border-radius:100px;
+  color:var(--w-light);
+  font-size:.66rem; font-weight:700;
+  letter-spacing:.8px; text-transform:uppercase;
+  white-space:nowrap; text-decoration:none;
+  transition: color .25s, background .25s, border-color .25s, box-shadow .25s, transform .2s;
+}
+.prog-lattes:hover, .prog-lattes:focus-visible {
+  color:#fff;
+  background: rgba(14,162,189,.17);
+  border-color: rgba(14,162,189,.62);
+  box-shadow: 0 0 14px rgba(14,162,189,.28);
+  transform: translateY(-1px);
+}
+.prog-lattes:focus-visible { outline:2px solid var(--w-accent); outline-offset:3px; }
+.prog-lattes i { font-size:.72rem; }
+.prog-lattes .ext { font-size:.6rem; opacity:.7; }
+@media (prefers-reduced-motion: reduce) {
+  .prog-lattes { transition:none; }
+  .prog-lattes:hover { transform:none; }
+}
 /* Botão HUD "Ver resumo / Ver autores" */
 .prog-toggle {
   position:relative; overflow:hidden;
