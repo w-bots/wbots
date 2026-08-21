@@ -992,6 +992,14 @@ hr.w-hr { border:none; border-top:1px solid var(--w-border); margin:32px 0; }
 }
 .date-done i { font-size:.72rem; }
 
+/* Hero — badge de submissões encerradas */
+.hero-badge.hero-badge-past {
+  background: rgba(74,222,128,.07);
+  border-color: rgba(74,222,128,.22);
+}
+.hero-badge.hero-badge-past i,
+.hero-badge.hero-badge-past strong { color: var(--w-green); }
+
 /* Home — .date-item encerrado */
 .date-item.is-past { opacity:.78; }
 .date-item.is-past .date-icon {
