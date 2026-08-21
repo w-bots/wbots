@@ -954,3 +954,70 @@ hr.w-hr { border:none; border-top:1px solid var(--w-border); margin:32px 0; }
   .prog-toggle[aria-expanded="true"] .pt-dot { animation:none; }
   .collapse.show .prog-detail { animation:none; }
 }
+
+/* ── PRAZOS ENCERRADOS ──────────────────────────────────────── */
+/* Data já vencida: texto recuado + risco em gradiente que "risca" ao entrar */
+.date-past {
+  position: relative;
+  display: inline-block;
+  color: var(--w-muted);
+  white-space: nowrap;
+}
+.date-past::after {
+  content:'';
+  position:absolute; left:-3px; right:-3px; top:52%;
+  height:2px; border-radius:2px;
+  background: linear-gradient(90deg,
+    rgba(74,222,128,0) 0%, var(--w-green) 18%,
+    #86efac 50%, var(--w-green) 82%, rgba(74,222,128,0) 100%);
+  box-shadow: 0 0 8px rgba(74,222,128,.55);
+  transform-origin: left center;
+  animation: strike-in .65s .35s cubic-bezier(.65,0,.35,1) both;
+}
+@keyframes strike-in {
+  from { transform: translateY(-50%) scaleX(0); }
+  to   { transform: translateY(-50%) scaleX(1); }
+}
+
+/* Selo "Encerrado" */
+.date-done {
+  display:inline-flex; align-items:center; gap:5px;
+  color: var(--w-green);
+  background: rgba(74,222,128,.09);
+  border: 1px solid rgba(74,222,128,.26);
+  padding: 2px 9px; border-radius:100px;
+  font-size:.62rem; font-weight:700;
+  letter-spacing:.9px; text-transform:uppercase;
+  white-space:nowrap;
+}
+.date-done i { font-size:.72rem; }
+
+/* Home — .date-item encerrado */
+.date-item.is-past { opacity:.78; }
+.date-item.is-past .date-icon {
+  background: rgba(74,222,128,.10);
+  color: var(--w-green);
+}
+.date-item.is-past .date-value {
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+}
+
+/* Chamada de trabalhos — .date-banner-card encerrado */
+.date-banner-card.dbc-past { opacity:.8; }
+.date-banner-card.dbc-past:hover { opacity:1; border-color:rgba(74,222,128,.32); box-shadow:0 8px 30px rgba(74,222,128,.08); }
+.date-banner-card.dbc-past .dbc-icon {
+  background: rgba(74,222,128,.10);
+  border-color: rgba(74,222,128,.22);
+  color: var(--w-green);
+}
+.date-banner-card.dbc-past .dbc-date { color: var(--w-muted); }
+.date-banner-card.dbc-past .date-done { margin-top:11px; }
+
+/* Rodapé — versão compacta, sem selo.
+   Mantém o --w-muted do parágrafo: --w-dim ficaria ilegível sobre --w-bg2. */
+#footer .date-past::after { height:1.5px; box-shadow:0 0 6px rgba(74,222,128,.45); }
+#footer .date-check { color: var(--w-green); font-size:.72rem; margin-left:5px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .date-past::after { animation:none; transform:translateY(-50%); }
+}
