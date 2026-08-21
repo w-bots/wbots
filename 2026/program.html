@@ -56,7 +56,7 @@
           </div>
           <div class="pm-item">
             <i class="bi bi-clock-history"></i>
-            <span><strong>14h00</strong> às <strong>17h50</strong></span>
+            <span><strong>14h00</strong> às <strong>18h00</strong></span>
           </div>
         </div>
 
@@ -202,7 +202,7 @@
         title: "Discussão"
       },
       {
-        time: "17h50",
+        time: "17h50 – 18h00",
         type: "closing",
         title: "Encerramento"
       }
@@ -258,8 +258,10 @@
             <div class="prog-title">${esc(item.title)}</div>
             <div class="prog-speaker">${esc(item.speaker)} <span>· ${esc(item.affiliation)}</span></div>
             <button class="prog-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#${cid}"
-                    aria-expanded="false" aria-controls="${cid}">
-              <i class="bi bi-chevron-right"></i>Ver resumo
+                    aria-expanded="false" aria-controls="${cid}" aria-label="Ver resumo da palestra">
+              <span class="pt-dot"></span>
+              <span class="pt-label" data-closed="Ver resumo" data-open="Ocultar resumo"></span>
+              <i class="bi bi-chevron-right"></i>
             </button>
             <div id="${cid}" class="collapse">
               <div class="prog-detail"><p>${esc(item.abstract)}</p></div>
@@ -272,8 +274,10 @@
             <div class="prog-title">${esc(item.title)}</div>
             ${authors.length ? `
             <button class="prog-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#${cid}"
-                    aria-expanded="false" aria-controls="${cid}">
-              <i class="bi bi-chevron-right"></i>Ver autores
+                    aria-expanded="false" aria-controls="${cid}" aria-label="Ver autores do trabalho">
+              <span class="pt-dot"></span>
+              <span class="pt-label" data-closed="Ver autores" data-open="Ocultar autores"></span>
+              <i class="bi bi-chevron-right"></i>
             </button>
             <div id="${cid}" class="collapse">
               <div class="prog-detail">

@@ -864,18 +864,77 @@ hr.w-hr { border:none; border-top:1px solid var(--w-border); margin:32px 0; }
 .prog-title { color:#fff; font-weight:700; font-size:.95rem; line-height:1.45; }
 .prog-speaker { color:var(--w-light); font-size:.88rem; font-weight:600; margin-top:6px; }
 .prog-speaker span { color:var(--w-muted); font-weight:400; }
+/* Botão HUD "Ver resumo / Ver autores" */
 .prog-toggle {
-  display:inline-flex; align-items:center; gap:7px;
-  background:none; border:none; padding:0; margin-top:10px;
-  color:var(--w-primary); font-size:.8rem; font-weight:600;
+  position:relative; overflow:hidden;
+  display:inline-flex; align-items:center; gap:9px;
+  margin-top:13px; padding:7px 15px 7px 12px;
+  background: linear-gradient(135deg, rgba(14,162,189,.11), rgba(0,212,255,.03));
+  border:1px solid rgba(14,162,189,.30);
+  border-radius:100px;
+  color:var(--w-light);
+  font-family:inherit; font-size:.735rem; font-weight:700;
+  letter-spacing:.9px; text-transform:uppercase;
+  cursor:pointer; -webkit-tap-highlight-color:transparent;
+  transition:border-color .25s, box-shadow .25s, color .25s, background .25s, transform .2s;
 }
-.prog-toggle:hover { color:var(--w-light); }
-.prog-toggle i { font-size:.72rem; transition:transform .25s; }
+/* feixe de luz que varre o botão no hover */
+.prog-toggle::before {
+  content:''; position:absolute; top:0; bottom:0; left:-60%; width:45%;
+  background: linear-gradient(100deg, transparent, rgba(0,212,255,.22), transparent);
+  transform: skewX(-18deg); pointer-events:none;
+  transition: left .55s cubic-bezier(.4,0,.2,1);
+}
+.prog-toggle:hover::before { left:118%; }
+.prog-toggle:hover, .prog-toggle:focus-visible {
+  color:#fff;
+  border-color: rgba(14,162,189,.62);
+  box-shadow: 0 0 18px rgba(14,162,189,.26);
+  transform: translateY(-1px);
+}
+.prog-toggle:focus-visible { outline:2px solid var(--w-accent); outline-offset:3px; }
+.prog-toggle:active { transform:translateY(0); }
+
+.prog-toggle .pt-dot {
+  flex-shrink:0; width:6px; height:6px; border-radius:50%;
+  background:var(--w-light); box-shadow:0 0 8px var(--w-primary);
+  transition:background .25s, box-shadow .25s;
+}
+.prog-toggle .pt-label::before { content: attr(data-closed); }
+.prog-toggle i { font-size:.68rem; transition:transform .3s cubic-bezier(.4,0,.2,1); }
+
+/* estado aberto */
+.prog-toggle[aria-expanded="true"] {
+  color:#fff;
+  background: linear-gradient(135deg, rgba(14,162,189,.22), rgba(0,212,255,.07));
+  border-color: rgba(14,162,189,.58);
+  box-shadow: 0 0 16px rgba(14,162,189,.20);
+}
+.prog-toggle[aria-expanded="true"] .pt-dot {
+  background:var(--w-accent); box-shadow:0 0 10px var(--w-accent);
+  animation: blink 2s ease infinite;
+}
+.prog-toggle[aria-expanded="true"] .pt-label::before { content: attr(data-open); }
 .prog-toggle[aria-expanded="true"] i { transform:rotate(90deg); }
+
 .prog-detail {
-  margin-top:12px; padding:15px 17px;
-  background:var(--w-bg3); border-left:2px solid var(--w-primary);
-  border-radius:0 8px 8px 0;
+  position:relative; overflow:hidden;
+  margin-top:14px; padding:16px 20px;
+  background:
+    linear-gradient(180deg, rgba(14,162,189,.055), rgba(14,162,189,.012)),
+    var(--w-bg3);
+  border:1px solid rgba(14,162,189,.18);
+  border-left:2px solid var(--w-primary);
+  border-radius:4px 10px 10px 4px;
+}
+.prog-detail::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background: linear-gradient(90deg, var(--w-primary), rgba(0,212,255,.45), transparent);
+}
+.collapse.show .prog-detail { animation: prog-reveal .45s ease both; }
+@keyframes prog-reveal {
+  from { opacity:0; transform:translateY(-6px); }
+  to   { opacity:1; transform:none; }
 }
 .prog-detail p { color:var(--w-muted); font-size:.86rem; line-height:1.75; margin:0; text-align:justify; }
 .prog-authors { color:var(--w-muted); font-size:.85rem; line-height:1.7; margin:0; }
@@ -885,4 +944,138 @@ hr.w-hr { border:none; border-top:1px solid var(--w-border); margin:32px 0; }
   .program-wrap tbody td { padding:13px 14px; }
   .time-cell { font-size:.82rem; }
   .prog-detail p { text-align:left; }
+  .prog-toggle { font-size:.7rem; letter-spacing:.6px; padding:6px 13px 6px 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prog-toggle, .prog-toggle::before, .prog-toggle i { transition:none; }
+  .prog-toggle:hover { transform:none; }
+  .prog-toggle:hover::before { left:-60%; }
+  .prog-toggle[aria-expanded="true"] .pt-dot { animation:none; }
+  .collapse.show .prog-detail { animation:none; }
+}
+
+/* ── BOTÕES DO TEMA ─────────────────────────────────────────── */
+/* O .btn-primary do Bootstrap cai no azul padrão e destoa do cyan. */
+.btn-w, .btn-w-ghost {
+  position:relative; overflow:hidden;
+  display:inline-flex; align-items:center; gap:9px;
+  padding:12px 26px; border-radius:100px;
+  font-family:inherit; font-size:.9rem; font-weight:700;
+  letter-spacing:.3px; text-decoration:none; cursor:pointer;
+  transition: box-shadow .28s, transform .2s, border-color .28s, color .28s, background .28s;
+}
+.btn-w {
+  background: linear-gradient(130deg, var(--w-primary), var(--w-accent));
+  border:1px solid rgba(0,212,255,.45);
+  color:#04121c;
+  box-shadow: 0 4px 22px rgba(14,162,189,.32);
+}
+.btn-w::before {
+  content:''; position:absolute; top:0; bottom:0; left:-60%; width:45%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.38), transparent);
+  transform: skewX(-18deg); pointer-events:none;
+  transition: left .6s cubic-bezier(.4,0,.2,1);
+}
+.btn-w:hover::before { left:120%; }
+.btn-w:hover, .btn-w:focus-visible {
+  color:#04121c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(14,162,189,.50);
+}
+.btn-w-ghost {
+  background: rgba(14,162,189,.06);
+  border:1px solid rgba(14,162,189,.30);
+  color: var(--w-light);
+}
+.btn-w-ghost:hover, .btn-w-ghost:focus-visible {
+  color:#fff;
+  background: rgba(14,162,189,.12);
+  border-color: rgba(14,162,189,.62);
+  box-shadow: 0 0 18px rgba(14,162,189,.24);
+  transform: translateY(-2px);
+}
+.btn-w:focus-visible, .btn-w-ghost:focus-visible { outline:2px solid var(--w-accent); outline-offset:3px; }
+.btn-w:active, .btn-w-ghost:active { transform:translateY(0); }
+.btn-w i, .btn-w-ghost i { font-size:.9rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-w, .btn-w::before, .btn-w-ghost { transition:none; }
+  .btn-w:hover, .btn-w-ghost:hover { transform:none; }
+  .btn-w:hover::before { left:-60%; }
+}
+
+/* ── PRAZOS ENCERRADOS ──────────────────────────────────────── */
+/* Data já vencida: texto recuado + risco em gradiente que "risca" ao entrar */
+.date-past {
+  position: relative;
+  display: inline-block;
+  color: var(--w-muted);
+  white-space: nowrap;
+}
+.date-past::after {
+  content:'';
+  position:absolute; left:-3px; right:-3px; top:52%;
+  height:2px; border-radius:2px;
+  background: linear-gradient(90deg,
+    rgba(74,222,128,0) 0%, var(--w-green) 18%,
+    #86efac 50%, var(--w-green) 82%, rgba(74,222,128,0) 100%);
+  box-shadow: 0 0 8px rgba(74,222,128,.55);
+  transform-origin: left center;
+  animation: strike-in .65s .35s cubic-bezier(.65,0,.35,1) both;
+}
+@keyframes strike-in {
+  from { transform: translateY(-50%) scaleX(0); }
+  to   { transform: translateY(-50%) scaleX(1); }
+}
+
+/* Selo "Encerrado" */
+.date-done {
+  display:inline-flex; align-items:center; gap:5px;
+  color: var(--w-green);
+  background: rgba(74,222,128,.09);
+  border: 1px solid rgba(74,222,128,.26);
+  padding: 2px 9px; border-radius:100px;
+  font-size:.62rem; font-weight:700;
+  letter-spacing:.9px; text-transform:uppercase;
+  white-space:nowrap;
+}
+.date-done i { font-size:.72rem; }
+
+/* Hero — badge de submissões encerradas */
+.hero-badge.hero-badge-past {
+  background: rgba(74,222,128,.07);
+  border-color: rgba(74,222,128,.22);
+}
+.hero-badge.hero-badge-past i,
+.hero-badge.hero-badge-past strong { color: var(--w-green); }
+
+/* Home — .date-item encerrado */
+.date-item.is-past { opacity:.78; }
+.date-item.is-past .date-icon {
+  background: rgba(74,222,128,.10);
+  color: var(--w-green);
+}
+.date-item.is-past .date-value {
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+}
+
+/* Chamada de trabalhos — .date-banner-card encerrado */
+.date-banner-card.dbc-past { opacity:.8; }
+.date-banner-card.dbc-past:hover { opacity:1; border-color:rgba(74,222,128,.32); box-shadow:0 8px 30px rgba(74,222,128,.08); }
+.date-banner-card.dbc-past .dbc-icon {
+  background: rgba(74,222,128,.10);
+  border-color: rgba(74,222,128,.22);
+  color: var(--w-green);
+}
+.date-banner-card.dbc-past .dbc-date { color: var(--w-muted); }
+.date-banner-card.dbc-past .date-done { margin-top:11px; }
+
+/* Rodapé — versão compacta, sem selo.
+   Mantém o --w-muted do parágrafo: --w-dim ficaria ilegível sobre --w-bg2. */
+#footer .date-past::after { height:1.5px; box-shadow:0 0 6px rgba(74,222,128,.45); }
+#footer .date-check { color: var(--w-green); font-size:.72rem; margin-left:5px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .date-past::after { animation:none; transform:translateY(-50%); }
 }
