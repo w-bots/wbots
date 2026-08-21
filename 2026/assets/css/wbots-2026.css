@@ -837,3 +837,52 @@ hr.w-hr { border:none; border-top:1px solid var(--w-border); margin:32px 0; }
   color:var(--w-light); font-size:.8rem; font-weight:700;
 }
 .criteria-list span { color:var(--w-text); font-size:.9rem; line-height:1.5; padding-top:4px; }
+
+/* ── PROGRAM: meta, linhas e detalhes ───────────────────────── */
+.program-meta { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:26px; }
+.program-meta .pm-item {
+  display:flex; align-items:center; gap:9px;
+  background:var(--w-card); border:1px solid var(--w-border);
+  border-radius:10px; padding:11px 16px;
+}
+.program-meta .pm-item i { color:var(--w-primary); font-size:1rem; }
+.program-meta .pm-item span { color:var(--w-text); font-size:.875rem; }
+.program-meta .pm-item strong { color:var(--w-light); }
+
+.prog-row-highlight { background:rgba(14,162,189,.07); }
+.prog-row-highlight td { color:var(--w-light) !important; font-weight:700; }
+.prog-row-highlight td i { margin-right:8px; }
+.prog-row-muted td { color:var(--w-muted) !important; font-size:.85rem !important; }
+
+.prog-kind {
+  display:inline-block; font-size:.68rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.9px;
+  color:var(--w-light); background:rgba(14,162,189,.12);
+  border:1px solid rgba(14,162,189,.22);
+  padding:3px 9px; border-radius:6px; margin-bottom:9px;
+}
+.prog-title { color:#fff; font-weight:700; font-size:.95rem; line-height:1.45; }
+.prog-speaker { color:var(--w-light); font-size:.88rem; font-weight:600; margin-top:6px; }
+.prog-speaker span { color:var(--w-muted); font-weight:400; }
+.prog-toggle {
+  display:inline-flex; align-items:center; gap:7px;
+  background:none; border:none; padding:0; margin-top:10px;
+  color:var(--w-primary); font-size:.8rem; font-weight:600;
+}
+.prog-toggle:hover { color:var(--w-light); }
+.prog-toggle i { font-size:.72rem; transition:transform .25s; }
+.prog-toggle[aria-expanded="true"] i { transform:rotate(90deg); }
+.prog-detail {
+  margin-top:12px; padding:15px 17px;
+  background:var(--w-bg3); border-left:2px solid var(--w-primary);
+  border-radius:0 8px 8px 0;
+}
+.prog-detail p { color:var(--w-muted); font-size:.86rem; line-height:1.75; margin:0; text-align:justify; }
+.prog-authors { color:var(--w-muted); font-size:.85rem; line-height:1.7; margin:0; }
+.prog-authors strong { color:var(--w-primary); }
+
+@media (max-width: 575px) {
+  .program-wrap tbody td { padding:13px 14px; }
+  .time-cell { font-size:.82rem; }
+  .prog-detail p { text-align:left; }
+}

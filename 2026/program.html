@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Programação — WBots 2026</title>
-  <meta content="Programação do WBots 2026" name="description">
+  <meta content="Programação do WBots 2026 — 11 de setembro de 2026, sala Margaret Hamilton" name="description">
 
   <link href="assets/img/icon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -45,13 +45,28 @@
     <section class="program-section">
       <div class="container">
 
+        <div class="program-meta" data-aos="fade-up">
+          <div class="pm-item">
+            <i class="bi bi-calendar-event"></i>
+            <span><strong>11 de setembro de 2026</strong> · sexta-feira</span>
+          </div>
+          <div class="pm-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>Sala <strong>Margaret Hamilton</strong></span>
+          </div>
+          <div class="pm-item">
+            <i class="bi bi-clock-history"></i>
+            <span><strong>14h00</strong> às <strong>17h50</strong></span>
+          </div>
+        </div>
+
         <div class="program-wrap" data-aos="fade-up">
           <div class="table-responsive">
             <table>
               <thead>
                 <tr>
-                  <td style="width:200px;">Horário</td>
-                  <th scope="col" colspan="5">Sessão</th>
+                  <td style="width:170px;">Horário</td>
+                  <th scope="col" colspan="5">Atividade</th>
                 </tr>
               </thead>
               <tbody id="program-body">
@@ -94,7 +109,117 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <script>
-    const program = [];
+    const program = [
+      {
+        time: "14h00",
+        type: "opening",
+        title: "Abertura"
+      },
+      {
+        time: "14h10 – 15h00",
+        type: "keynote",
+        title: "O papel dos bots na avaliação e no desenvolvimento de software acessível",
+        speaker: "Marcelo Medeiros Eler",
+        affiliation: "EACH – USP",
+        abstract: "A acessibilidade digital é uma característica essencial de aplicações interativas, permitindo que pessoas com diferentes habilidades utilizem sistemas, serviços e informações digitais de forma autônoma e segura. Apesar da existência de legislação, padrões e diretrizes consolidadas, incorporar acessibilidade ao processo de desenvolvimento de software ainda é um desafio: muitos problemas são identificados apenas nas etapas finais do ciclo de vida, enquanto as ferramentas automatizadas tradicionais conseguem detectar apenas parte das barreiras enfrentadas pelas pessoas com deficiência. Esta palestra apresenta como a automação de atividades de desenvolvimento pode apoiar a acessibilidade ao longo do ciclo de vida de um software, incluindo conceitos fundamentais de acessibilidade, iniciativas consolidadas de automação da avaliação de aplicações interativas e avanços recentes no uso de agentes inteligentes e Grandes Modelos de Linguagem (LLMs), tanto na avaliação quanto no desenvolvimento de aplicações, inclusive por pessoas com deficiência que atuam diretamente na construção de software."
+      },
+      {
+        time: "15h15 – 15h30",
+        type: "discussion",
+        title: "Discussão"
+      },
+      {
+        time: "15h30 – 16h00",
+        type: "award",
+        title: "Premiação de artigos e de revisores"
+      },
+      {
+        time: "16h00 – 16h30",
+        type: "coffee",
+        title: "Coffee break"
+      },
+      {
+        time: "16h30 – 16h45",
+        type: "paper",
+        title: "Pre-Deployment Evaluation of LLM-based Conversational Agents through a Digital Twin-Inspired Approach",
+        authors: [
+          "Caio Vinicius Bernardo (USP, Brasil)",
+          "Thais Rodrigues Neubauer (USP, Brasil)",
+          "Gregorio Assagra de Almeida Filho",
+          "Enio Alterman Blay",
+          "Sarajane Marques Peres (USP, Brasil)"
+        ]
+      },
+      {
+        time: "16h45 – 16h50",
+        type: "discussion",
+        title: "Discussão"
+      },
+      {
+        time: "16h50 – 17h05",
+        type: "paper",
+        title: "Uma Proposta de Arquitetura de Software para uma Plataforma Conversacional de Suporte à BNCC",
+        authors: [
+          "Emanuel Coutinho (UFC, Brasil)",
+          "Francisco Gilvan de Oliveira (UFC, Brasil)"
+        ]
+      },
+      {
+        time: "17h05 – 17h10",
+        type: "discussion",
+        title: "Discussão"
+      },
+      {
+        time: "17h10 – 17h25",
+        type: "paper",
+        title: "ArcAssist-Web Bot: A Prototype Instantiation for Evidence-Grounded Architectural Decision Support",
+        authors: [
+          "Vanusa Rodrigues de Oliveira (UFLA, Brasil)",
+          "Bento Rafael Siqueira (UFLA, Brasil)",
+          "Samira Santos da Silva (UFLA, Brasil)"
+        ]
+      },
+      {
+        time: "17h25 – 17h30",
+        type: "discussion",
+        title: "Discussão"
+      },
+      {
+        time: "17h30 – 17h45",
+        type: "paper",
+        title: "Uma Ferramenta para Apoiar a Seleção de Instrumentos de Avaliação de Chatbots Educacionais",
+        authors: [
+          "Mariana Almeida (UTFPR, Brasil)",
+          "Gabriel Felipe Jess Meira (PUCPR, Brasil)",
+          "Silvana Morita Melo (UFGD, Brasil)",
+          "Leo Natan Paschoal (PUCPR, Brasil)",
+          "Pedro Henrique Dias Valle (USP, Brasil)"
+        ]
+      },
+      {
+        time: "17h45 – 17h50",
+        type: "discussion",
+        title: "Discussão"
+      },
+      {
+        time: "17h50",
+        type: "closing",
+        title: "Encerramento"
+      }
+    ];
+
+    const SIMPLE_ROWS = {
+      opening: "bi-megaphone",
+      closing: "bi-flag",
+      coffee:  "bi-cup-hot",
+      award:   "bi-trophy"
+    };
+
+    function esc(s) {
+      return String(s == null ? "" : s).replace(/[&<>"]/g, function(c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+      });
+    }
 
     function renderProgram(data) {
       const tbody = document.getElementById("program-body");
@@ -108,44 +233,53 @@
       fallback.style.display = "none";
 
       data.forEach((item, idx) => {
+        const type = (item.type || "").toLowerCase();
+        const cid = `det-${idx}`;
         const tr = document.createElement("tr");
+
         const tdTime = document.createElement("td");
         tdTime.className = "time-cell";
-        tdTime.innerHTML = `<i class="bi bi-clock me-2"></i>${item.time}`;
+        tdTime.innerHTML = `<i class="bi bi-clock me-2"></i>${esc(item.time)}`;
 
         const tdInfo = document.createElement("td");
         tdInfo.colSpan = 5;
 
-        const type = (item.type || "").toLowerCase();
-        const isBreak    = type.includes("coffee");
-        const isOpening  = type.includes("opening");
-        const isClosing  = type.includes("closing");
-        const isPanelish = type.includes("panel") || type.includes("challenges");
-        const hasAuthors = Array.isArray(item.authors) && item.authors.length > 0;
+        if (SIMPLE_ROWS[type]) {
+          tr.className = "prog-row-highlight";
+          tdInfo.innerHTML = `<i class="bi ${SIMPLE_ROWS[type]}"></i>${esc(item.title)}`;
 
-        let titleHTML = item.title || "";
-        if (isBreak)    titleHTML = `<i class="bi bi-cup-hot me-2"></i>Coffee break`;
-        else if (isOpening) titleHTML = `<i class="bi bi-megaphone me-2"></i>${item.title}`;
-        else if (isClosing) titleHTML = `<i class="bi bi-flag me-2"></i>${item.title}`;
-        else if (isPanelish) titleHTML = `<i class="bi bi-people me-2"></i>${item.title}`;
+        } else if (type === "discussion") {
+          tr.className = "prog-row-muted";
+          tdInfo.innerHTML = `<i class="bi bi-chat-dots me-2"></i>${esc(item.title)}`;
 
-        if (isBreak || isOpening || isClosing) {
-          tr.style.background = "rgba(14,162,189,.06)";
-          tdInfo.style.color = "var(--w-light)";
-          tdInfo.style.fontWeight = "600";
-          tdInfo.innerHTML = titleHTML;
-        } else if (hasAuthors) {
-          const cid = `det-${idx}`;
+        } else if (type === "keynote") {
           tdInfo.innerHTML = `
-            <button class="btn btn-link p-0 text-start" data-bs-toggle="collapse" data-bs-target="#${cid}"
-                    style="color:var(--w-text);text-decoration:none;font-size:.9rem;">
-              <i class="bi bi-chevron-right me-1" style="color:var(--w-primary);font-size:.75rem;"></i>${titleHTML}
+            <span class="prog-kind">Palestra</span>
+            <div class="prog-title">${esc(item.title)}</div>
+            <div class="prog-speaker">${esc(item.speaker)} <span>· ${esc(item.affiliation)}</span></div>
+            <button class="prog-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#${cid}"
+                    aria-expanded="false" aria-controls="${cid}">
+              <i class="bi bi-chevron-right"></i>Ver resumo
             </button>
-            <div id="${cid}" class="collapse mt-2">
-              <small style="color:var(--w-muted);"><strong style="color:var(--w-primary);">Autores:</strong> ${item.authors.join(", ")}</small>
+            <div id="${cid}" class="collapse">
+              <div class="prog-detail"><p>${esc(item.abstract)}</p></div>
             </div>`;
+
         } else {
-          tdInfo.innerHTML = titleHTML;
+          const authors = Array.isArray(item.authors) ? item.authors : [];
+          tdInfo.innerHTML = `
+            <span class="prog-kind">Apresentação</span>
+            <div class="prog-title">${esc(item.title)}</div>
+            ${authors.length ? `
+            <button class="prog-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#${cid}"
+                    aria-expanded="false" aria-controls="${cid}">
+              <i class="bi bi-chevron-right"></i>Ver autores
+            </button>
+            <div id="${cid}" class="collapse">
+              <div class="prog-detail">
+                <p class="prog-authors"><strong>Autores:</strong> ${authors.map(esc).join(", ")}</p>
+              </div>
+            </div>` : ""}`;
         }
 
         tr.appendChild(tdTime);
