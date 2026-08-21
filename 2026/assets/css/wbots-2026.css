@@ -865,6 +865,30 @@ hr.w-hr { border:none; border-top:1px solid var(--w-border); margin:32px 0; }
 .prog-speaker { color:var(--w-light); font-size:.88rem; font-weight:600; margin-top:6px; }
 .prog-speaker span { color:var(--w-muted); font-weight:400; }
 
+/* Nome do palestrante como link para o Lattes */
+.prog-speaker-link {
+  color: var(--w-light);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(14,162,189,.45);
+  transition: color .25s, border-color .25s, text-shadow .25s;
+}
+.prog-speaker-link:hover, .prog-speaker-link:focus-visible {
+  color: var(--w-accent);
+  border-bottom-color: var(--w-accent);
+  text-shadow: 0 0 12px rgba(0,212,255,.45);
+}
+.prog-speaker-link:focus-visible {
+  outline:2px solid var(--w-accent); outline-offset:3px; border-radius:2px;
+}
+/* nome e chip acendem juntos — leem como um elemento só */
+.prog-speaker-link:hover ~ .prog-lattes,
+.prog-speaker-link:focus-visible ~ .prog-lattes {
+  color:#fff;
+  background: rgba(14,162,189,.17);
+  border-color: rgba(14,162,189,.62);
+  box-shadow: 0 0 14px rgba(14,162,189,.28);
+}
+
 /* Chip do currículo Lattes do palestrante */
 .prog-lattes {
   display:inline-flex; align-items:center; gap:6px;

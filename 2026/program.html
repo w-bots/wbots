@@ -258,10 +258,14 @@
             <span class="prog-kind">Palestra</span>
             <div class="prog-title">${esc(item.title)}</div>
             <div class="prog-speaker">
-              ${esc(item.speaker)} <span>· ${esc(item.affiliation)}</span>
+              ${item.lattes ? `
+              <a class="prog-speaker-link" href="${esc(item.lattes)}" target="_blank" rel="noopener noreferrer"
+                 aria-label="Currículo Lattes de ${esc(item.speaker)} (abre em nova aba)">${esc(item.speaker)}</a>`
+              : esc(item.speaker)}
+              <span>· ${esc(item.affiliation)}</span>
               ${item.lattes ? `
               <a class="prog-lattes" href="${esc(item.lattes)}" target="_blank" rel="noopener noreferrer"
-                 aria-label="Currículo Lattes de ${esc(item.speaker)} (abre em nova aba)">
+                 tabindex="-1" aria-hidden="true">
                 <i class="bi bi-mortarboard-fill"></i>Lattes<i class="bi bi-box-arrow-up-right ext"></i>
               </a>` : ""}
             </div>
