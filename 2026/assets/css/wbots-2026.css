@@ -955,6 +955,56 @@ hr.w-hr { border:none; border-top:1px solid var(--w-border); margin:32px 0; }
   .collapse.show .prog-detail { animation:none; }
 }
 
+/* ── BOTÕES DO TEMA ─────────────────────────────────────────── */
+/* O .btn-primary do Bootstrap cai no azul padrão e destoa do cyan. */
+.btn-w, .btn-w-ghost {
+  position:relative; overflow:hidden;
+  display:inline-flex; align-items:center; gap:9px;
+  padding:12px 26px; border-radius:100px;
+  font-family:inherit; font-size:.9rem; font-weight:700;
+  letter-spacing:.3px; text-decoration:none; cursor:pointer;
+  transition: box-shadow .28s, transform .2s, border-color .28s, color .28s, background .28s;
+}
+.btn-w {
+  background: linear-gradient(130deg, var(--w-primary), var(--w-accent));
+  border:1px solid rgba(0,212,255,.45);
+  color:#04121c;
+  box-shadow: 0 4px 22px rgba(14,162,189,.32);
+}
+.btn-w::before {
+  content:''; position:absolute; top:0; bottom:0; left:-60%; width:45%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.38), transparent);
+  transform: skewX(-18deg); pointer-events:none;
+  transition: left .6s cubic-bezier(.4,0,.2,1);
+}
+.btn-w:hover::before { left:120%; }
+.btn-w:hover, .btn-w:focus-visible {
+  color:#04121c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(14,162,189,.50);
+}
+.btn-w-ghost {
+  background: rgba(14,162,189,.06);
+  border:1px solid rgba(14,162,189,.30);
+  color: var(--w-light);
+}
+.btn-w-ghost:hover, .btn-w-ghost:focus-visible {
+  color:#fff;
+  background: rgba(14,162,189,.12);
+  border-color: rgba(14,162,189,.62);
+  box-shadow: 0 0 18px rgba(14,162,189,.24);
+  transform: translateY(-2px);
+}
+.btn-w:focus-visible, .btn-w-ghost:focus-visible { outline:2px solid var(--w-accent); outline-offset:3px; }
+.btn-w:active, .btn-w-ghost:active { transform:translateY(0); }
+.btn-w i, .btn-w-ghost i { font-size:.9rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-w, .btn-w::before, .btn-w-ghost { transition:none; }
+  .btn-w:hover, .btn-w-ghost:hover { transform:none; }
+  .btn-w:hover::before { left:-60%; }
+}
+
 /* ── PRAZOS ENCERRADOS ──────────────────────────────────────── */
 /* Data já vencida: texto recuado + risco em gradiente que "risca" ao entrar */
 .date-past {
