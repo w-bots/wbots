@@ -121,6 +121,7 @@
         title: "O papel dos bots na avaliação e no desenvolvimento de software acessível",
         speaker: "Marcelo Medeiros Eler",
         affiliation: "EACH – USP",
+        lattes: "https://lattes.cnpq.br/0170428647417667",
         abstract: "A acessibilidade digital é uma característica essencial de aplicações interativas, permitindo que pessoas com diferentes habilidades utilizem sistemas, serviços e informações digitais de forma autônoma e segura. Apesar da existência de legislação, padrões e diretrizes consolidadas, incorporar acessibilidade ao processo de desenvolvimento de software ainda é um desafio: muitos problemas são identificados apenas nas etapas finais do ciclo de vida, enquanto as ferramentas automatizadas tradicionais conseguem detectar apenas parte das barreiras enfrentadas pelas pessoas com deficiência. Esta palestra apresenta como a automação de atividades de desenvolvimento pode apoiar a acessibilidade ao longo do ciclo de vida de um software, incluindo conceitos fundamentais de acessibilidade, iniciativas consolidadas de automação da avaliação de aplicações interativas e avanços recentes no uso de agentes inteligentes e Grandes Modelos de Linguagem (LLMs), tanto na avaliação quanto no desenvolvimento de aplicações, inclusive por pessoas com deficiência que atuam diretamente na construção de software."
       },
       {
@@ -256,7 +257,18 @@
           tdInfo.innerHTML = `
             <span class="prog-kind">Palestra</span>
             <div class="prog-title">${esc(item.title)}</div>
-            <div class="prog-speaker">${esc(item.speaker)} <span>· ${esc(item.affiliation)}</span></div>
+            <div class="prog-speaker">
+              ${item.lattes ? `
+              <a class="prog-speaker-link" href="${esc(item.lattes)}" target="_blank" rel="noopener noreferrer"
+                 aria-label="Currículo Lattes de ${esc(item.speaker)} (abre em nova aba)">${esc(item.speaker)}</a>`
+              : esc(item.speaker)}
+              <span>· ${esc(item.affiliation)}</span>
+              ${item.lattes ? `
+              <a class="prog-lattes" href="${esc(item.lattes)}" target="_blank" rel="noopener noreferrer"
+                 tabindex="-1" aria-hidden="true">
+                <i class="bi bi-mortarboard-fill"></i>Lattes<i class="bi bi-box-arrow-up-right ext"></i>
+              </a>` : ""}
+            </div>
             <button class="prog-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#${cid}"
                     aria-expanded="false" aria-controls="${cid}" aria-label="Ver resumo da palestra">
               <span class="pt-dot"></span>
