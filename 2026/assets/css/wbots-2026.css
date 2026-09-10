@@ -863,9 +863,10 @@ hr.w-hr { border:none; border-top:1px solid var(--w-border); margin:32px 0; }
 }
 .prog-title { color:#fff; font-weight:700; font-size:.95rem; line-height:1.45; }
 .prog-speaker { color:var(--w-light); font-size:.88rem; font-weight:600; margin-top:6px; }
+.prog-speaker + .prog-speaker { margin-top:4px; }
 .prog-speaker span { color:var(--w-muted); font-weight:400; }
 
-/* Nome do palestrante como link para o Lattes */
+/* Nome do palestrante como link para o perfil profissional */
 .prog-speaker-link {
   color: var(--w-light);
   text-decoration: none;
@@ -881,16 +882,16 @@ hr.w-hr { border:none; border-top:1px solid var(--w-border); margin:32px 0; }
   outline:2px solid var(--w-accent); outline-offset:3px; border-radius:2px;
 }
 /* nome e chip acendem juntos — leem como um elemento só */
-.prog-speaker-link:hover ~ .prog-lattes,
-.prog-speaker-link:focus-visible ~ .prog-lattes {
+.prog-speaker-link:hover ~ .prog-profile,
+.prog-speaker-link:focus-visible ~ .prog-profile {
   color:#fff;
   background: rgba(14,162,189,.17);
   border-color: rgba(14,162,189,.62);
   box-shadow: 0 0 14px rgba(14,162,189,.28);
 }
 
-/* Chip do currículo Lattes do palestrante */
-.prog-lattes {
+/* Chip do perfil profissional do palestrante */
+.prog-profile {
   display:inline-flex; align-items:center; gap:6px;
   margin-left:9px; padding:3px 11px;
   vertical-align:middle;
@@ -903,19 +904,19 @@ hr.w-hr { border:none; border-top:1px solid var(--w-border); margin:32px 0; }
   white-space:nowrap; text-decoration:none;
   transition: color .25s, background .25s, border-color .25s, box-shadow .25s, transform .2s;
 }
-.prog-lattes:hover, .prog-lattes:focus-visible {
+.prog-profile:hover, .prog-profile:focus-visible {
   color:#fff;
   background: rgba(14,162,189,.17);
   border-color: rgba(14,162,189,.62);
   box-shadow: 0 0 14px rgba(14,162,189,.28);
   transform: translateY(-1px);
 }
-.prog-lattes:focus-visible { outline:2px solid var(--w-accent); outline-offset:3px; }
-.prog-lattes i { font-size:.72rem; }
-.prog-lattes .ext { font-size:.6rem; opacity:.7; }
+.prog-profile:focus-visible { outline:2px solid var(--w-accent); outline-offset:3px; }
+.prog-profile i { font-size:.72rem; }
+.prog-profile .ext { font-size:.6rem; opacity:.7; }
 @media (prefers-reduced-motion: reduce) {
-  .prog-lattes { transition:none; }
-  .prog-lattes:hover { transform:none; }
+  .prog-profile { transition:none; }
+  .prog-profile:hover { transform:none; }
 }
 /* Botão HUD "Ver resumo / Ver autores" */
 .prog-toggle {
